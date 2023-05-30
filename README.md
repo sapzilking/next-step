@@ -25,7 +25,8 @@
 * HTTP 각 방식 별 structure에 대해 한번 더 되새기게 되었다.
 
 ### 요구사항 4 - redirect 방식으로 이동
-* 
+* 완료!
+* redirect 302 상태 코드에 대한 실습
 
 ### 요구사항 5 - cookie
 * 
