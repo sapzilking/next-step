@@ -97,7 +97,6 @@ public class RequestHandler extends Thread {
         return Boolean.parseBoolean(value);
     }
 
-
     private String getDefaultPath(String path) {
         if (path.equals("/")) {
             return "/index.html";
