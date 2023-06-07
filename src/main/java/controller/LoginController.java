@@ -5,9 +5,10 @@ import http.HttpRequest;
 import http.HttpResponse;
 import model.User;
 
-public class LoginController implements Controller{
+public class LoginController extends AbstractController {
+
     @Override
-    public void service(HttpRequest request, HttpResponse response) {
+    protected void doPost(HttpRequest request, HttpResponse response) {
         User user = DataBase.findUserById(request.getParameter("userId"));
 
         if (user != null) {
