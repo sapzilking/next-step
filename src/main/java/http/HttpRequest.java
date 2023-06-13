@@ -1,17 +1,13 @@
 package http;
 
-import com.google.common.base.Charsets;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import util.HttpRequestUtils;
 import util.IOUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Map;
 
 public class HttpRequest {
 
@@ -66,5 +62,13 @@ public class HttpRequest {
 
     public String getParameter(String name) {
         return requestParams.getParameter(name);
+    }
+
+    public HttpCookie getCookies() {
+        return new HttpCookie(getHeader("Cookie"));
+    }
+
+    public HttpSession getSession() {
+        return HttpSessions.getSession(getCookies().getCookie("JSESSIONID"));
     }
 }
